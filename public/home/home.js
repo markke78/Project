@@ -24,6 +24,7 @@ userNameTitle.innerHTML = `Hello ${getUser.name}` ;
 const showListOfPosts  = async () => {
     const response = await fetch(`${baseUrl}/posts`);
     const finalOutput = await response.json();
+    console.log(finalOutput);
 
     const getPostView = document.querySelector("#postsview");
 
@@ -47,7 +48,11 @@ const showListOfPosts  = async () => {
 
         div.appendChild(p);
 
-        console.log(div);
+        const aTag = document.createElement("a");
+        aTag.href = `./posts.html?id=${finalOutput.data[i]._id}`;
+        aTag.textContent = "Read More";
+
+        div.appendChild(aTag);
 
         getPostView.appendChild(div);
 
