@@ -43,10 +43,7 @@ const showListOfPosts  = async () => {
 
         div.appendChild(h4);
 
-        const p = document.createElement("p");
-        p.textContent = finalOutput.data[i].description;
 
-        div.appendChild(p);
 
         const aTag = document.createElement("a");
         aTag.href = `./posts.html?id=${finalOutput.data[i]._id}`;
