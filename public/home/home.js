@@ -2,12 +2,14 @@
 // When we learn react, there we use concept called as Protected Routes
 (function isNotLoggedIN() {
     let accessToken = JSON.parse(localStorage.getItem("acess-token"));
-
+    
     if (!accessToken) {
+
         alert("You are not logged in, so please login");
         window.location.href = "../login.html";
     }
 })();
+
 
 
 const getUser =  JSON.parse(localStorage.getItem("user"));
